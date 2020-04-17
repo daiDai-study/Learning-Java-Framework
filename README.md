@@ -7,8 +7,8 @@
 
 ### 参考资料
 
-[Github: SpringAll](https://github.com/wuyouzhuguli/SpringAll)：包含了 `shiro` 的实例代码，非常赞
-[Shiro安全框架【快速入门】就这一篇](https://zhuanlan.zhihu.com/p/54176956)
-[教你 Shiro 整合 SpringBoot，避开各种坑](https://www.jianshu.com/p/ef0a82d471d2)
-[教你 Shiro + SpringBoot 整合 JWT](https://www.jianshu.com/p/3c51832f1051)
++ [Github: SpringAll](https://github.com/wuyouzhuguli/SpringAll)：包含了 `shiro` 的实例代码，非常赞
++ [Shiro安全框架【快速入门】就这一篇](https://zhuanlan.zhihu.com/p/54176956)
++ [教你 Shiro 整合 SpringBoot，避开各种坑](https://www.jianshu.com/p/ef0a82d471d2)
++ [教你 Shiro + SpringBoot 整合 JWT](https://www.jianshu.com/p/3c51832f1051)
 
