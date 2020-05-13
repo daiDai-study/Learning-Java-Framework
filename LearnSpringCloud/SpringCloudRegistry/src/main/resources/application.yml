@@ -1,0 +1,14 @@
+spring:
+  application:
+    # 应用名称，默认也是注册中心的ID
+    name: registry
+#server:
+#  # 注册中心映射端口号，8761（Eureka服务器端默认使用作为注册中心的监控端口、Eureka客户端通信端口）
+#  port: 8761
+
+eureka:
+  client:
+    # 对于Eureka服务器来说，没必要注册客户端
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka
