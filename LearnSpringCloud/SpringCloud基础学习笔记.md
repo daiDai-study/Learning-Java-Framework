@@ -32,7 +32,7 @@
 
 ## 二、Spring Cloud 实践
 
-### 1、Spring Cloud 中各大部件及其相互之间的交互
+### 1、Spring Cloud 中各大部件
 
 #### 1.0 基础概念
 
@@ -78,7 +78,7 @@
 
 #### 1.3 网关服务
 
-> 网关作为微服务架构中面向客户，是API调用方的统一入口，而网关服务也是一个注册客户端，需要注册到注册中心
+> 网关作为微服务架构中面向客户的端口，是API调用方的统一入口，而网关服务也是一个注册客户端，需要注册到注册中心
 > 
 > Spring Cloud 中使用 Netflix 中的 Zuul 组件作为网关服务
 
@@ -100,10 +100,106 @@
 4. 启用注册客户端（添加注解 `@EnableDiscoveryClient`）
 5. 启用配置中心（添加注册 `@EnableConfigServer`）
 6. 配置-各个微服务的配置文件存放git信息（地址、用户名、密码） 
-7. 重新配置各个微服务
+7. **重新配置各个微服务**
     + pom.xml 中添加依赖： `spring-cloud-config-client`
     + 将 application.yml 删除
     + 新增 bootstrap.yml
     + bootstrap.yml 中配置应用名称和注册中心地址
     + bootstrap.yml 中配置 作为配置中心的信息
     
+### 2、Spring Cloud 中服务间的通信
+
+#### 2.1 RestTemplate + Ribbon
+> RestTemplate 是 Spring Cloud 内置的一个 HTTP 客户端（对 Apache HttpClient 的封装）
+> 
+> Ribbon 可以对客户端进行负载均衡，其中核心组件就是 `LoadBalancerClient`
+
+![](./imgs/Ribbon.png)
+
+使用方式：
+1. 采用硬编码的方式使用 RestTemplate（IP和端口号都需要通过硬编码设置）
+    ```Java
+    @GetMapping("test")
+    public String test(){
+        RestTemplate restTemplate = new RestTemplate();
+        String json = restTemplate.getForObject("http://localhost:8100/port", String.class);
+        return json;
+    }
+    ```
+2. 采用 Ribbon 获取服务列表（提供负载均衡）并使用 RestTemplate
+    ```Java
+    @Resource
+    private LoadBalancerClient loadBalancerClient;
+
+    ...
+    @GetMapping("test")
+    public String test(){
+        RestTemplate restTemplate = new RestTemplate();
+        final ServiceInstance book = loadBalancerClient.choose("book");
+        final String host = book.getHost();
+        final int port = book.getPort();
+        String json = restTemplate.getForObject("http://"+ host +":"+ port +"/port", String.class);
+        return json;
+    }
+    ```
+3. 采用注解方式（内部原理也是Ribbon）使用 RestTemplate
+    ```Java
+    // 注入到IOC容器（在其他配置类中）
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
+
+    // 以下代码在某个Controller层中
+    @Resource
+    private RestTemplate restTemplate;
+
+    ... 
+    @GetMapping("test")
+    public String test(){
+        final String json = restTemplate.getForObject("http://book/port", String.class);
+        return json;
+    }
+    ```
+
+#### 2.2 Feign
+
+> Feign 是一个声明web服务客户端，它的出现简化了微服务的通信过程
+> 
+> Feign 也集成了 Ribbon
+> 
+> Feign 的开发需要创建一个接口并使用 Spring MVC 注解
+
+1. 依赖引入：`spring-cloud-starter-openfeign`
+2. 启用 Feign 客户端：`@EnableFeignClients`
+3. 创建一个接口，并使用 `@FeignClient` 指明哪个微服务的调用客户端
+4. 在接口中创建抽象方法，并使用 Spring MVC 注解声明参数和路由
+
+### 3、Hystrix 服务降级
+
+> 当某个被调用的服务宕机时，可能会导致整个系统的雪崩效应
+> 
+> 服务降级常与熔断器结合使用
+> 
+> Hystrix 默认的超时时间为 1 s（可以通过配置文件信息配置）
+
+#### 3.1 Hystrix 在 RestTemplate 中使用
+
+1. 依赖引入：`spring-cloud-starter-netflix-hystrix`
+2. 启用断路器：`@EnableCircuitBreaker`
+3. 添加降级方法（方法的参数、返回值需要跟目标方法一致）
+4. 目标方法上添加注解指定降级方法：`@HystrixCommand`
+5. 也可以在类上添加全局默认的降级方法（该方法不需要参数，且返回 String 或任何可以被 JSON 序列化的对象）之后，在类上添加注解：`@DefaultProperties`，同时在目标方法上添加注解（此时不需要指定降级方法）
+
+#### 3.2 Hystrix 在 Feign 中使用
+
+1. 不需要手动引入 hystrix 的依赖，`spring-cloud-starter-openfeign`中已经有对应的依赖关系
+2. 启用 hystrix ：`feign.hystrix.enabled = true`
+3. 在 `@FeignClient` 的接口内部，创建一个静态的内部实现类，并使用 `@Component` 注入
+4. 在 `@FeignClient` 的接口上，将 `@FeignClient` 中的 `fallback` 属性设置为上述中的实现类
+
+
+#### 3.3 Hystrix 断路器原理
+
+![](./imgs/Hystrix断路器原理.png)
