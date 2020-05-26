@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="org.daistudy.springframework.ioc.xml" use-default-filters="true">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <bean class="org.daistudy.springframework.ioc.xml.bean.UserDao" name="userDao2,userDao3"/>
+
+    <bean class="org.daistudy.springframework.ioc.xml.model.Book" id="book"/>
+    <!-- bean 的名称为 "book1,book10" -->
+    <bean class="org.daistudy.springframework.ioc.xml.model.Book" id="book1,book10"/>
+    <!-- bean 的名称为 "book11" 和 "book12"，一个 Bean 有两个名称 -->
+    <bean class="org.daistudy.springframework.ioc.xml.model.Book" name="book11,book12"/>
+    <bean class="org.daistudy.springframework.ioc.xml.model.Book" id="book2"/>
+
+    <!-- 构造方法注入：index（参数位置） -->
+    <bean class="org.daistudy.springframework.ioc.xml.model.Book" id="book3">
+        <constructor-arg index="0" value="0"/>
+        <constructor-arg index="1" value="第一本书"/>
+    </bean>
+
+    <!-- 构造方法注入：index（参数位置） -->
+    <bean class="org.daistudy.springframework.ioc.xml.model.Book" id="book7">
+        <constructor-arg index="0" value="0"/>
+        <constructor-arg index="1" value="12"/>
+    </bean>
+
+    <!-- 构造方法注入：name（参数名） -->
+    <bean class="org.daistudy.springframework.ioc.xml.model.Book" id="book4">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="第二本书"/>
+    </bean>
+
+    <!-- set方法注入：name属性名是通过 Java 中的内省机制分析出来的属性名，简单说，就是根据 get/set 方法分析出来的属性名 -->
+    <bean class="org.daistudy.springframework.ioc.xml.model.Book" id="book5">
+        <property name="id" value="2"/>
+        <property name="name" value="第三本书"/>
+    </bean>
+
+    <!-- p名称空间注入：需要先引入p名称空间，底层也是通过 set 方法注入的 -->
+    <bean class="org.daistudy.springframework.ioc.xml.model.Book" id="book6" p:id="3" p:name="第四本书">
+    </bean>
+
+    <bean class="org.daistudy.springframework.ioc.xml.utils.OkHttpUtils" factory-method="getInstance"
+          id="okHttpClient"/>
+
+    <bean class="org.daistudy.springframework.ioc.xml.utils.OkhttpUtilsWithObject" id="okhttpUtilsWithObject"/>
+    <bean class="okhttp3.OkHttpClient" factory-bean="okhttpUtilsWithObject" factory-method="getInstance" id="okHttpClient2"/>
+
+    <bean class="org.daistudy.springframework.ioc.xml.model.User" id="user">
+        <property name="id" value="1"/>
+        <property name="name" value="小王"/>
+        <!-- ref 引入 Spring IoC 容器中的其它 bean -->
+        <property name="cat" ref="cat"/>
+        <!-- 数组使用 array 节点注入 -->
+        <property name="cats">
+            <array>
+                <ref bean="cat"/>
+                <bean class="org.daistudy.springframework.ioc.xml.model.Cat" id="cat2" p:name="小花" p:color="花色"/>
+            </array>
+        </property>
+        <!-- list 使用 list 节点注入 -->
+        <property name="favorities">
+            <list>
+                <value>足球</value>
+                <value>篮球</value>
+            </list>
+        </property>
+        <!-- map 使用 map 节点注入 -->
+        <property name="map">
+            <map>
+                <entry key="name" value="javaboy"/>
+                <entry key="age" value="18"/>
+            </map>
+        </property>
+        <!-- properties 使用 props 节点注入 -->
+        <property name="properties">
+            <props>
+                <prop key="name">javaboy</prop>
+                <prop key="age">20</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean class="org.daistudy.springframework.ioc.xml.model.Cat" id="cat" p:name="小白" p:color="白色"/>
+</beans>
