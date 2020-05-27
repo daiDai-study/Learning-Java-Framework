@@ -78,7 +78,7 @@ public class Demo{
         public static void main(String[] args) {
             // ClassPathXmlApplicationContext 会从 classpath 下查找配置文件
             ClassPathXmlApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("applicationContext.xml");
-            // FileSystemXmlApplicationContext 从操作系统路径（绝对路径或相对路径）下去寻找配置文件
+            // FileSystemXmlApplicationContext 从操作系统路径（绝对路径或相对路径）下查找配置文件
             FileSystemXmlApplicationContext applicationContext2 = new FileSystemXmlApplicationContext("SpringIocXml/src/main/resources/applicationContext.xml");
             final Object book1 = applicationContext1.getBean("book");
             final Object book2 = applicationContext2.getBean("book");
@@ -87,13 +87,13 @@ public class Demo{
         }
     }
    ```
-   **注**：加载方式，除了 `ClassPathXmlApplicationContext` 去 classpath 下查找配置文件，另外也可以使用 `FileSystemXmlApplicationContext` 从操作系统路径（绝对路径或相对路径）下去寻找配置文件
+   **注**：加载方式，除了 `ClassPathXmlApplicationContext` 去 classpath 下查找配置文件，另外也可以使用 `FileSystemXmlApplicationContext` 从操作系统路径（绝对路径或相对路径）下查找配置文件
 
 #### Bean 的获取
 
-> Bean 的获取不仅可以通过 id 属性或 name 属性去获取，也可以通过 Class 去获取
+> Bean 的获取不仅可以通过 **名称** 去获取，也可以通过 **类型**（Class） 去获取
 
-+ 如果通过 Class 去获取 Bean，需要先确保 Spring IoC 容器中只包含一个该类的实例 Bean，如果包含多个（通过 id 属性或 name 属性赋值多个），则运行时会出现 `NoUniqueBeanDefinitionException` 异常
++ 如果通过类型去获取 Bean，需要先确保 Spring IoC 容器中只包含一个该类的实例 Bean，如果包含多个，则运行时会出现 `NoUniqueBeanDefinitionException` 异常
 + xml 配置 bean 时，可以设置 id 或 name 属性指定 bean 的名称，一般情况下，两者没有区别，特殊情况：
     1. id="user1,user2"==> bean 的名称为 "user1,user2"
     2. name="user1,user2"==> bean 的名称为 "user1" 或 "user2"
@@ -170,7 +170,7 @@ public class OkhttpUtilsWithObject {
 
 #### 复杂属性的注入
 
-> 此处的复杂属性主要包括：对象（ref）、数组（array）、List集合（list）、Set（set）、Map（map）、Properties（props）
+> 此处的复杂属性主要包括：对象（ref）、数组（array）、List（list）、Set（set）、Map（map）、Properties（props）
 
 ```java
 // get/set方法省略
@@ -242,17 +242,17 @@ public class User {
 
 > 属性的注入存在多种方式，主要有：构造方法注入、set方法注入
 
-##### 属性上添加注解 @Autowired 或 @Resource
+##### 属性上添加注解 @Autowired 或 @Resource -- 字段名作为 Bean 默认名称
 对象的注入：自动扫描时，如果对象间存在依赖关系，可以通过注解 @Autowired 或 @Resource 实现自动装配
-   + @Autowired：根据名称（字段名 == bean 名）去查找，如果通过字段名找不到，会根据类型去找，如果该类型有多个会报错，如果需要指定名称可以搭配 @Qualifier（指定 Bean 的名称）使用
-   + @Resource：根据名称（字段名 == bean 名）去查找，可以指定名称，如果通过字段名找不到，会根据类型去找，如果该类型有多个会报错
+   + @Autowired：根据名称（字段名 == bean 名）去查找，如果通过名称找不到，会根据类型去找，如果该类型有多个会报错，如果需要指定名称可以搭配 @Qualifier（指定 Bean 的名称）使用
+   + @Resource：根据名称（字段名 == bean 名）去查找，如果通过名称找不到，会根据类型去找，如果该类型有多个会报错，可以直接指定名称
 
 ```java
 @Autowired
 UserDao userDao;
 ```
 
-##### set 方法添加注解（@Autowired 或 @Resource）并通过参数注入
+##### set 方法添加注解（@Autowired 或 @Resource）-- 参数名作为 Bean 默认名称
 ```java
 @Autowired
 public void setUserDao(UserDao userDao){
@@ -260,7 +260,7 @@ public void setUserDao(UserDao userDao){
 }
 ```
 
-##### 构造方法注入，不需要添加注解
+##### 构造方法注入，不需要添加注解 -- 参数名作为 Bean 默认名称
 ```java
 public UserService(UserDao userDao){
     this.userDao = userDao;
@@ -270,7 +270,7 @@ public UserService(UserDao userDao){
 
 #### 外部 Bean 的注入
 
-> 当使用一些外部 Bean 时，这些 Bean 可能没有构造方法，而是通过 Builder 来构造，此时如果想要注入这些 Bean 时，存在两种注入方法：静态工厂注入和实例工厂注入
+> 当使用一些外部 Bean 时，这些 Bean 可能没有构造方法，而是通过 Builder 来构造，此时如果想要注入这些 Bean 时，存在多种注入方法：静态工厂注入（类似与 xml）、实例工厂注入（类似与 xml）和实现 `FactoryBean` 进行注入
 
 ##### 静态工厂注入
 
@@ -288,9 +288,9 @@ public class OkHttpUtils {
 
 ```java
 @Bean("staticOkHttpClient")
-    OkHttpClient staticOkHttpClient(){
-        return OkHttpUtils.getInstance();
-    }
+OkHttpClient staticOkHttpClient(){
+    return OkHttpUtils.getInstance();
+}
 ```
 
 ##### 实例工厂注入
@@ -351,7 +351,7 @@ FactoryDemoBean factoryDemoBean(FactoryDemo factoryDemo) {
 
 ### IoC/DI 自动化配置
 
-1. 通过注解 @Component（@Controller、@Service、@Repository）配置需要扫描的类
+1. 通过注解 @Component（@Controller、@Service、@Repository、@Configuration）配置需要扫描的类
 2. 配置自动化扫描
    + Java 配置
         ```java
@@ -458,7 +458,7 @@ public class JavaConfig {
     }
 }
 
-// 自己使用profile时，需要先加载空的配置文件，然后设置 profile ，再加载配置文件，最后还需要刷新
+// 自己使用profile时，需要先通过无参构造，然后设置 profile ，再加载（注册）配置文件，最后刷新
 public class ProfileDemo {
     public static void main(String[] args) {
         final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
