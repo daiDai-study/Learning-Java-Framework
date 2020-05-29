@@ -12,6 +12,32 @@ Spring 提供了许多组件，从而支持诸多功能
 
 ![](./imgs/spring-source-jars.png)
 
+#### Spring 是如何简化了企业应用程序开发的？
+> Spring 通过其自身的分层体系结构，能够允许开发者按需选择使用组件。
+
+#### Spring 的分层体系结构
+> Spring 的分层体系结构如下图所示，主要由7个模块（组件）组成。组成 Spring 框架的每个模块都可以单独存在，也可以与其他一个或多个模块联合使用。
+
+#### Spring 的模块
+
+![](imgs/spring体系01.png)
+
+![](imgs/spring体系02.png)
+
++ Spring Core：Spring 核心模块，其提供了 Spring框架的基本功能，是 Spring 框架最基础的部分。它提供了依赖注入（Dependency Injection，简称DI）特征来实现容器对 Bean 的管理。其中最基本的概念就是 BeanFactory，它也是任何 Spring 应用的核心，它使用控制反转（Inversion of Control，简称IoC）将应用配置和依赖说明从实际的应用代码中分离出来。
+
++ Spring Context：又称 Spring 上下文模块，向 Spring 框架提供上下文信息。核心模块的 BeanFactory 使 Spring 成为一个容器，而上下文模块使其成为一个框架。上下文模块扩展了 BeanFactory 的概念，增加了对国际化（I18N）消息、事件传播以及验证的支持。另外，这个模块提供了许多企业服务，例如电子邮件、JNDL 访问、EJB 集成、远程以及时序调度服务。
+
++ Spring AOP：Spring AOP 模块为 Spring 框架提供了对面向切面编程（Aspect Oriented Programming，简称 AOP）的丰富支持，该模块是 Spring 应用实现面向切面编程的基础。此外，AOP 模块也将元数据编程引入了 Spring，使用 Spring 的元数据支持，开发者可以为源代码增加注释，指示 Spring 在何处以及如何应用切面函数。
+
++ Spring DAO：Spring 的 DAO 模块抽取了使用 JDBC 时的重复代码，使得开发者可以保持数据库访问代码的干净简洁，并且可以防止因关闭数据库资源失败而引起的问题。
+
++ Spring ORM：Spring ORM 模块提供了对若干 ORM 框架的支持，包括 JDO、Hibernate 和 iBatis。
+
++ Spring Web：Spring Web 模块建立了一个基于应用上下文模块之上的 Web 上下文模块，为基于 Web 的应用程序提供了上下文。此外，Web 模块还提供了一些面向服务支持。如：实现文件上传的 multipart 请求。它也提供了 Spring 和其它 Web 框架的集成，比如 Struts、WebWork。
+
++ Spring Web MVC：Spring Web MVC 模块提供了一个全功能的构建 Web 应用程序的 MVC 框架。
+
 ### IoC/DI
 
 > IoC（Inversion of Control），中文译为控制反转。控制反转是一种思想，是指对一个对象的控制权的反转。
