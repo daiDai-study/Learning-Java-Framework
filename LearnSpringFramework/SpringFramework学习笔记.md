@@ -33,6 +33,24 @@ public class Demo{
 > 
 > Spring 中 IoC/DI 特性本质上是通过 XML 解析和 Java 反射机制来实现的。
 
+### AOP
+
+> AOP（Aspect Oriented Programming），中文译为面向切面编程，它是一种编程范式，主要适用场景就是将非功能性需求和功能性需求分离，并将非功能性需求代码嵌入到功能性需求代码中，以对 OOP（面向对象编程） 起到补充作用。
+
+代码分离的主要目的有两个，第一个是使代码的重用性增强，减少代码的重复；第二个是代码结构更加清晰。常见的分离模式主要有以下几种：
++ 水平分离：前后端分离；Controller 层、Service 层、Dao 层的分离
++ 垂直分离：按业务划分模块（如订单模块、库存模块等）-- 多模块的划分和微服务
++ 切面分离：功能性需求和非功能性需求的划分
+
+常见的非功能性需求包括：权限控制、缓存控制、事务控制、日志、性能监控、异常处理、分布式追踪等
+
+AOP 的基础概念
+
++ 增强（Advice，也有的称为通知）：定义了切面需要完成的工作，包括工作内容（做什么）和工作时间（何时做）
++ 切点（Pointcut）：定义了增强被应用的位置，即定义了切面指定工作（某一个增强）的工作地点（何地做）
++ 切面（Aspect）：是多组增强和切点的集合，定义了切面的全部功能（何时何地做什么）
++ 连接点（JoinPoint）：切点的定义
+
 ## IoC/DI
 ### IoC/DI XML 配置
 
@@ -516,3 +534,161 @@ public class UserAware implements ApplicationContextAware {
     }
 }
 ```
+
+## AOP
+
+### Spring AOP 的五种通知
+
+> Spring AOP 的五种通知分别为：前置通知、后置通知、异常通知、返回通知和环绕通知
+
+1. 引入 Spring 依赖和 Aop 相关依赖
+   ```xml
+   <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+    </dependency>
+   ```
+2. 定义切点
+   + 使用注解
+        ```java
+        // 定义注解
+        @Target({ElementType.METHOD})
+        @Retention(RetentionPolicy.RUNTIME)
+        public @interface Action {
+        }
+
+        // 使用注解
+        @Component("myCalculator")
+        public class MyCalculatorImpl {
+            @Action
+            public Integer add(int a, int b){
+                return a + b;
+            }
+
+            public Integer minus(int a, int b){
+                return a - b;
+            }
+        }
+        ```
+   + 使用规则
+        ```java
+        @Pointcut("execution(* org.daistudy.springframework.aop.simpledemo.*.*(..))")
+        public void pointcut2(){}
+
+        // 在切面中的统一使用方式
+        // @Before(value = "pointcut2()")
+        ```
+3. 定义切面
+    ```java
+    @Component
+    @Aspect // 表示这是一个切面
+    public class ActionAspect {
+        // 统一定义切点
+        @Pointcut("@annotation(Action)")
+        public void pointcut(){}
+
+        // 在切面中的直接使用方式
+        // @Before(value = "@annotation(Action)")
+
+        // 在切面中的统一使用方式
+        // @Before(value = "pointcut()")
+
+        // 前置通知
+        @Before(value = "@annotation(Action)")
+        public void before(JoinPoint joinPoint){
+            final Signature signature = joinPoint.getSignature();
+            final String name = signature.getName();
+            System.out.println(name + "方法开始执行...");
+        }
+        // 后置通知
+        @After(value = "@annotation(Action)")
+        public void after(JoinPoint joinPoint){
+            final Signature signature = joinPoint.getSignature();
+            final String name = signature.getName();
+            System.out.println(name + "方法执行结束...");
+        }
+        // 返回通知
+        @AfterReturning(value = "@annotation(Action)", returning = "r")
+        public void returing(JoinPoint joinPoint, Integer r){
+            final Signature signature = joinPoint.getSignature();
+            final String name = signature.getName();
+            System.out.println(name + "方法返回：" + r);
+        }
+        // 异常通知
+        @AfterThrowing(value = "@annotation(Action)", throwing = "e")
+        public void afterThrowing(JoinPoint joinPoint, Exception e){
+            final Signature signature = joinPoint.getSignature();
+            final String name = signature.getName();
+            System.out.println(name + "方法抛异常了：" + e.getMessage());
+        }
+        // 环绕通知
+        @Around(value = "@annotation(Action)")
+        public Object around(ProceedingJoinPoint joinPoint){
+            final Signature signature = joinPoint.getSignature();
+            final String name = signature.getName();
+
+            Object proceed = null;
+            try {
+                System.out.println(name + "方法开始执行...around");
+                proceed = joinPoint.proceed();
+                System.out.println(name + "方法执行结束...around");
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                System.out.println(name + "方法抛异常了：" + throwable.getMessage() + "around");
+            }
+            System.out.println(name + "方法返回：" + proceed + "around");
+            return proceed;
+        }
+    }
+    ```
+4. 开启包扫描和自动代理
+   ```java
+    @Configuration
+    @ComponentScan(basePackages = "org.daistudy.springframework.aop.simpledemo")
+    @EnableAspectJAutoProxy // 开启自动代理
+    public class JavaConfig {
+    }
+   ```
+
+## 数据库
+
+### JdbcTemplate
+
+1. 引入 `spring-jdbc` 依赖（该依赖会依赖 `spring-tx` 依赖）
+2. 在配置内中配置 `DataSource` 和 `JdbcTemplate` 两个 Bean：
+   ```java
+   @Bean
+    DataSource dataSource(){
+        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/test");
+        dataSource.setUsername("root");
+        dataSource.setPassword("root");
+
+        return dataSource;
+    }
+
+    @Bean
+    JdbcTemplate jdbcTemplate(DataSource dataSource){
+        return new JdbcTemplate(dataSource);
+    }
+   ```
+3. 使用 JdbcTemplate 
+
+### 事务
+
+**为使事务生效**：
+1. 在配置类上开启事务管理：@EnableTransactionManager
+2. 在配置类中配置 Bean ：默认可以直接返回一个 DataSourceTransactionManager
+3. 在需要使用事务的类和方法上配置：
+   + 类必须注册到 Spring IoC 容器中；
+   + 在方法上使用注解 @Transactional
+
