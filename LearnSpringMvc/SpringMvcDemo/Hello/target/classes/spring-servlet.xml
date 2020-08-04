@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--当访问的 url 是 '/hello' 时，会直接访问到 HelloController 这个接口-->
+    <!--HelloController的实例 Bean 名称就是 '/hello'-->
+<!--    <bean class="org.daistudy.springmvc.hello.controller.HelloController" name="/hello"/>-->
+<!--    <bean class="org.daistudy.springmvc.hello.controller.IndexController" name="/"/>-->
+
+
+    <context:component-scan base-package="org.daistudy.springmvc.hello" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--这个是处理器映射器，这种方式，请求地址其实就是一个 Bean 的名字，然后根据这个 bean 的名字查找对应的处理器-->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" id="handlerMapping"/>
+
+    <!--处理器适配器-->
+    <!--SimpleControllerHandlerAdapter 配合实现了 Controller 的处理器进行使用-->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" id="handlerAdapter"/>
+
+    <!--视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
+        <property name="prefix" value="/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>
