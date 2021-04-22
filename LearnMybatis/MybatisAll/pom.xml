@@ -24,7 +24,7 @@
         <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
 
         <!-- 依赖版本管理 -->
-        <mybatis-verison>3.4.6</mybatis-verison>
+        <mybatis-verison>3.5.6</mybatis-verison>
         <mssql-version>7.4.1.jre8</mssql-version>
         <lombok-version>1.18.12</lombok-version>
         <spring-version>5.2.8.RELEASE</spring-version>
