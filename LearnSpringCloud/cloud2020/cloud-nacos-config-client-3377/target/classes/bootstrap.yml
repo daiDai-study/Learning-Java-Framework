@@ -1,0 +1,22 @@
+server:
+  port: 3377
+
+spring:
+  application:
+    name: nacos-config-client
+
+  devtools:
+    livereload:
+      port: 33377
+    restart:
+      poll-interval: 3s
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.177.108.64:8848
+      config:
+        server-addr: 10.177.108.64:8848
+        file-extension: yaml
+#        group: 对应 nacos 配置管理中的组，默认为 DEFAULT_GROUP
+#        namespace: 对应 nacos 中的命名空间，默认为 public

@@ -1,0 +1,11 @@
+server:
+  port: 8002
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath:**/xml/*Mapper.xml
+  type-aliases-package: org.daistudy.spring.boot.orm.mybatis.entity

@@ -1,7 +1,285 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3998a2f1-4b30-4ebb-bbab-be15fcde2312" name="Default Changelist" comment="" />
+    <list default="true" id="3998a2f1-4b30-4ebb-bbab-be15fcde2312" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz-ui-angular/src/app/routes/quartz/job-log/apiJobLog.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz-ui-angular/src/app/routes/quartz/job-log/job-log.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz-ui-angular/src/app/routes/quartz/job/job.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-simple/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-simple/src/main/java/org/dai/study/quartz/simple/QuartzSample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/QuartzSpringBootApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/config/MybatisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/config/QuartzConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/config/Swagger3Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/constant/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/constant/ScheduleConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/controller/SysJobController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/controller/SysJobLogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/entity/SysJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/entity/SysJobLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/exception/TaskException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/job/SampleJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/mapper/SysJobLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/mapper/SysJobMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/mapper/xml/SysJobLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/mapper/xml/SysJobMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/model/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/service/HelloService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/service/ISysJobLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/service/ISysJobService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/service/impl/HelloServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/service/impl/SysJobLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/service/impl/SysJobServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/task/RyTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/AbstractQuartzJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/CharsetKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/Convert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/CronUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/ExceptionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/JobInvokeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/QuartzDisallowConcurrentExecution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/QuartzJobExecution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/ScheduleUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/java/org/dai/study/quartz/springboot/util/SpringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/quartz-spring-boot/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/sql/job.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnQuartz/quartz/sql/quartz.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/DataSourceDynamicMybatisApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/annotation/TargetDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/aop/DynamicDataSourceContextHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/aop/DynamicDataSourceRouting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/aop/aspect/DynamicDataSourceAnnotationAdvisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/aop/aspect/DynamicDataSourceAnnotationInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/aop/aspect/DynamicDataSourceAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/config/ApplicationRunnerScript.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/config/DynamicDataSourceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/controller/TestUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/entity/ApiResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/entity/ApiResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/entity/DataSourceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/entity/TestUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/mapper/DataSourceConfigMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/mapper/TestUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/mapper/xml/DataSourceConfigMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/mapper/xml/TestUserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/service/DataSourceConfigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/service/TestUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/service/impl/DataSourceConfigServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/service/impl/TestUserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/util/DataSourceUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/java/org/daistudy/spring/boot/datasource/dynamic/routing/util/SpringContextUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-datasource-dynamic-routing/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-druid/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-druid/src/main/java/org/daistudy/jdbctemplate/datasource/druid/DataSourceDruidApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-druid/src/main/java/org/daistudy/jdbctemplate/datasource/druid/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-druid/src/main/java/org/daistudy/jdbctemplate/datasource/druid/entity/ApiResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-druid/src/main/java/org/daistudy/jdbctemplate/datasource/druid/entity/ApiResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-druid/src/main/java/org/daistudy/jdbctemplate/datasource/druid/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-druid/src/main/java/org/daistudy/jdbctemplate/datasource/druid/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-druid/src/main/java/org/daistudy/jdbctemplate/datasource/druid/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-druid/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-hikaricp/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-hikaricp/src/main/java/org/daistudy/jdbctemplate/datasource/hikaricp/DataSourceHikariCPApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-hikaricp/src/main/java/org/daistudy/jdbctemplate/datasource/hikaricp/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-hikaricp/src/main/java/org/daistudy/jdbctemplate/datasource/hikaricp/entity/ApiResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-hikaricp/src/main/java/org/daistudy/jdbctemplate/datasource/hikaricp/entity/ApiResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-hikaricp/src/main/java/org/daistudy/jdbctemplate/datasource/hikaricp/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-hikaricp/src/main/java/org/daistudy/jdbctemplate/datasource/hikaricp/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-hikaricp/src/main/java/org/daistudy/jdbctemplate/datasource/hikaricp/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-jdbctemplate-datasource-hikaricp/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-mq-rabbitmq-consumer/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-mq-rabbitmq-consumer/src/main/java/org/daistudy/mq/rabbitmq/consumer/helloworld/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-mq-rabbitmq-consumer/src/main/java/org/daistudy/mq/rabbitmq/consumer/util/RabbitMQUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-mq-rabbitmq-producer/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-mq-rabbitmq-producer/src/main/java/org/daistudy/mq/rabbitmq/producer/helloworld/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/src/main/java/org/daistudy/spring/boot/org/jdbctemplate/OrmJdbcTemplateApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/src/main/java/org/daistudy/spring/boot/org/jdbctemplate/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/src/main/java/org/daistudy/spring/boot/org/jdbctemplate/entity/ApiResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/src/main/java/org/daistudy/spring/boot/org/jdbctemplate/entity/ApiResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/src/main/java/org/daistudy/spring/boot/org/jdbctemplate/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/src/main/java/org/daistudy/spring/boot/org/jdbctemplate/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/src/main/java/org/daistudy/spring/boot/org/jdbctemplate/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/src/main/java/org/daistudy/spring/boot/org/jdbctemplate/util/SpringContextUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-jdbctemplate/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/OrmMybatisApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/entity/ApiResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/entity/ApiResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/mapper/xml/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/java/org/daistudy/spring/boot/orm/mybatis/util/SpringContextUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringBoot/boot2020/boot-orm-mybatis/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud/cloud-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud/cloud-gateway/src/main/java/com/aac/cloud/gateway/CloudGatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud/cloud-gateway/src/main/java/com/aac/cloud/gateway/config/GatewayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud/cloud-gateway/src/main/java/com/aac/cloud/gateway/controller/ConfigClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud/cloud-gateway/src/main/java/com/aac/cloud/gateway/route/DynamicRouteServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud/cloud-gateway/src/main/java/com/aac/cloud/gateway/route/DynamicRouteServiceImplByNacos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud/cloud-gateway/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-api-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-api-common/src/main/java/org/daistudy/springcloud/common/entity/CommonResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-api-common/src/main/java/org/daistudy/springcloud/common/entity/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-client-3355/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-client-3355/src/main/java/org/daistudy/springcloud/config/ConfigClient3355Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-client-3355/src/main/java/org/daistudy/springcloud/config/controller/ConfigClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-client-3355/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-client-3366/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-client-3366/src/main/java/org/daistudy/springcloud/config/ConfigClient3366Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-client-3366/src/main/java/org/daistudy/springcloud/config/controller/ConfigClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-client-3366/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-server-3344/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-server-3344/src/main/java/org/daistudy/springcloud/config/ConfigServer3344Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-config-server-3344/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-consul-order-service-80/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-consul-order-service-80/src/main/java/org/daistudy/springcloud/order/ConsulOrderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-consul-order-service-80/src/main/java/org/daistudy/springcloud/order/config/ApplicationContextConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-consul-order-service-80/src/main/java/org/daistudy/springcloud/order/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-consul-order-service-80/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-consul-payment-service-8006/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-consul-payment-service-8006/src/main/java/org/daistudy/springcloud/payment/ConsulPayment8006Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-consul-payment-service-8006/src/main/java/org/daistudy/springcloud/payment/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-consul-payment-service-8006/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-hystrix-consumer-service-80/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-hystrix-consumer-service-80/src/main/java/org/daistudy/springcloud/consumer/EurekaFeignHystrixConsumerService80.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-hystrix-consumer-service-80/src/main/java/org/daistudy/springcloud/consumer/api/HystrixProviderFallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-hystrix-consumer-service-80/src/main/java/org/daistudy/springcloud/consumer/api/HystrixProviderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-hystrix-consumer-service-80/src/main/java/org/daistudy/springcloud/consumer/controller/HystrixConsumerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-hystrix-consumer-service-80/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-order-service-80/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-order-service-80/src/main/java/org/daistudy/springcloud/order/EurekaFeignOrderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-order-service-80/src/main/java/org/daistudy/springcloud/order/api/CloudPaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-order-service-80/src/main/java/org/daistudy/springcloud/order/config/ApplicationContextConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-order-service-80/src/main/java/org/daistudy/springcloud/order/config/FeignConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-order-service-80/src/main/java/org/daistudy/springcloud/order/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-order-service-80/src/main/java/org/daistudy/springcloud/rule/OrderRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-feign-order-service-80/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-hystrix-provider-service-8001/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-hystrix-provider-service-8001/src/main/java/org/daistudy/springcloud/provider/EurekaHystrixProviderService8001.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-hystrix-provider-service-8001/src/main/java/org/daistudy/springcloud/provider/controller/HystrixProviderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-hystrix-provider-service-8001/src/main/java/org/daistudy/springcloud/provider/service/HystrixCircuitBreakService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-hystrix-provider-service-8001/src/main/java/org/daistudy/springcloud/provider/service/HystrixCircuitBreakServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-hystrix-provider-service-8001/src/main/java/org/daistudy/springcloud/provider/service/HystrixFallbackService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-hystrix-provider-service-8001/src/main/java/org/daistudy/springcloud/provider/service/HystrixFallbackServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-hystrix-provider-service-8001/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-order-service-80/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-order-service-80/src/main/java/org/daistudy/springcloud/order/EurekaOrder80Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-order-service-80/src/main/java/org/daistudy/springcloud/order/config/ApplicationContextConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-order-service-80/src/main/java/org/daistudy/springcloud/order/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-order-service-80/src/main/java/org/daistudy/springcloud/order/lb/IOrderLoadBalanced.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-order-service-80/src/main/java/org/daistudy/springcloud/order/lb/OrderLoadBalanced.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-order-service-80/src/main/java/org/daistudy/springcloud/rule/OrderRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-order-service-80/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8001/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8001/src/main/java/org/daistudy/springcloud/payment/EurekaPayment8001Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8001/src/main/java/org/daistudy/springcloud/payment/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8001/src/main/java/org/daistudy/springcloud/payment/mapper/PaymentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8001/src/main/java/org/daistudy/springcloud/payment/service/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8001/src/main/java/org/daistudy/springcloud/payment/service/impl/PaymentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8001/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8001/src/main/resources/mapper/PaymentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8002/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8002/src/main/java/org/daistudy/springcloud/payment/EurekaPayment8002Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8002/src/main/java/org/daistudy/springcloud/payment/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8002/src/main/java/org/daistudy/springcloud/payment/mapper/PaymentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8002/src/main/java/org/daistudy/springcloud/payment/service/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8002/src/main/java/org/daistudy/springcloud/payment/service/impl/PaymentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8002/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-payment-service-8002/src/main/resources/mapper/PaymentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-server-7001/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-server-7001/src/main/java/org/daistudy/springcloud/eureka/EurekaServer7001Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-server-7001/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-server-7002/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-server-7002/src/main/java/org/daistudy/springcloud/eureka/EurekaServer7002Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-eureka-server-7002/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-gateway-gateway-9527/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-gateway-gateway-9527/src/main/java/org/daistudy/springcloud/gateway/Gateway9527Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-gateway-gateway-9527/src/main/java/org/daistudy/springcloud/gateway/config/GatewayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-gateway-gateway-9527/src/main/java/org/daistudy/springcloud/gateway/filter/MyGlobalFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-gateway-gateway-9527/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-gateway-gateway-9527/src/test/java/TimeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-hystrix-dashboard-9001/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-hystrix-dashboard-9001/src/main/java/org/daistudy/springcloud/dashboard/HystrixDashboard9001Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-hystrix-dashboard-9001/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-config-client-3377/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-config-client-3377/src/main/java/org/daistudy/springcloud/nacos/NacosConfigClient3377Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-config-client-3377/src/main/java/org/daistudy/springcloud/nacos/controller/ConfigClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-config-client-3377/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-config-client-3377/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-consumer-80/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-consumer-80/src/main/java/org/daistudy/springcloud/nacos/NacosConsumer80Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-consumer-80/src/main/java/org/daistudy/springcloud/nacos/config/ApplicationContextConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-consumer-80/src/main/java/org/daistudy/springcloud/nacos/controller/ConsumerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-consumer-80/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-provider-9101/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-provider-9101/src/main/java/org/daistudy/springcloud/nacos/NacosProvider9101Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-provider-9101/src/main/java/org/daistudy/springcloud/nacos/controller/ProviderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-nacos-provider-9101/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-sentinel-service-8401/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-sentinel-service-8401/src/main/java/org/daistudy/springcloud/sentinel/SentinelService8401Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-sentinel-service-8401/src/main/java/org/daistudy/springcloud/sentinel/block/DefalultBlockHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-sentinel-service-8401/src/main/java/org/daistudy/springcloud/sentinel/controller/FlowLimitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-sentinel-service-8401/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-consumer-8003/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-consumer-8003/src/main/java/org/daistudy/springcloud/stream/StreamRabbitmqConsumer8803Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-consumer-8003/src/main/java/org/daistudy/springcloud/stream/listener/ReceiveMessageListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-consumer-8003/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-consumer-8802/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-consumer-8802/src/main/java/org/daistudy/springcloud/stream/StreamRabbitmqConsumer8802Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-consumer-8802/src/main/java/org/daistudy/springcloud/stream/listener/ReceiveMessageListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-consumer-8802/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-produce-8801/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-produce-8801/src/main/java/org/daistudy/springcloud/stream/StreamRabbitmqProduce8801Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-produce-8801/src/main/java/org/daistudy/springcloud/stream/controller/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-produce-8801/src/main/java/org/daistudy/springcloud/stream/service/MessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-produce-8801/src/main/java/org/daistudy/springcloud/stream/service/impl/MessageServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-stream-rabbitmq-produce-8801/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-zk-order-service-80/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-zk-order-service-80/src/main/java/org/daistudy/springcloud/order/ZKOrderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-zk-order-service-80/src/main/java/org/daistudy/springcloud/order/config/ApplicationContextConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-zk-order-service-80/src/main/java/org/daistudy/springcloud/order/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-zk-order-service-80/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-zk-payment-service-8004/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-zk-payment-service-8004/src/main/java/org/daistudy/springcloud/payment/ZKPayment8004Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-zk-payment-service-8004/src/main/java/org/daistudy/springcloud/payment/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringCloud/cloud2020/cloud-zk-payment-service-8004/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringIocJava/src/main/java/org/daistudy/springframework/ioc/java/test/bean/conflict/modela/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringIocJava/src/main/java/org/daistudy/springframework/ioc/java/test/bean/conflict/modelb/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringIocJava/src/main/java/org/daistudy/springframework/ioc/java/test/bean/samename/model/ModelA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringIocJava/src/main/java/org/daistudy/springframework/ioc/java/test/bean/samename/model/ModelB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringJdbc/src/main/java/org/daistudy/springframework/jdbc/service/ExceptionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringTransaction/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringTransaction/src/main/java/org/daistudy/springframework/transaction/config/JavaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnMybatis/MybatisAll/DemoJava/src/main/java/org/daistudy/mybatis/onjava/demo/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnMybatis/MybatisAll/DemoJava/src/main/java/org/daistudy/mybatis/onjava/demo/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnMybatis/MybatisAll/DemoJava/src/main/java/org/daistudy/mybatis/onjava/mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnMybatis/MybatisAll/DemoJava/src/main/java/org/daistudy/mybatis/onjava/mapper/StudentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/src/main/java/org/daistudy/springboot/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringBoot/Demo/src/test/java/org/daistudy/springboot/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringCloud/SpringCloud基础学习笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnSpringCloud/SpringCloud基础学习笔记.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringIocJava/src/main/java/org/daistudy/springframework/ioc/java/config/JavaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringIocJava/src/main/java/org/daistudy/springframework/ioc/java/config/JavaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringIocJava/src/main/java/org/daistudy/springframework/ioc/java/main/AutoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringIocJava/src/main/java/org/daistudy/springframework/ioc/java/main/AutoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringIocJava/target/classes/META-INF/SpringIocJava.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringJdbc/src/main/java/org/daistudy/springframework/jdbc/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringJdbc/src/main/java/org/daistudy/springframework/jdbc/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringJdbc/src/main/java/org/daistudy/springframework/jdbc/main/SimpleTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringJdbc/src/main/java/org/daistudy/springframework/jdbc/main/SimpleTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringJdbc/src/main/java/org/daistudy/springframework/jdbc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/SpringJdbc/src/main/java/org/daistudy/springframework/jdbc/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFrameworkAll/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnSpringFramework/SpringFramework学习笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnSpringFramework/SpringFramework学习笔记.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,10 +295,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/softwareInstalled/apache-maven-3.6.3" />
+        <option name="mavenHome" value="D:/ProgramFiles/apache-maven-3.6.3" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -30,6 +311,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1aYlzFkrbx17dnofF0oipoBaJJN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -39,11 +321,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBootShiroWithStarter/src/main/java/org/daistudy/springbootshirowithstarter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -73,7 +355,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringBootShiroApplication">
+  <component name="RunManager" selected="JUnit.SimpleShiroTest.testCustomSimpleShiro">
     <configuration name="GuestControllerTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpringBootShiro" />
       <extension name="coverage">
@@ -106,7 +388,7 @@
       </method>
     </configuration>
     <configuration name="SimpleShiroTest.testCustomSimpleShiro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SimpleShiro" />
+      <module name="simple-shiro" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.daistudy.simpleshiro.*" />
@@ -121,8 +403,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleShiroTest.testSubject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SimpleShiro" />
+    <configuration name="SimpleShiroTest.testDefaultSimpleShiro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-shiro" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.daistudy.simpleshiro.*" />
@@ -131,7 +413,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.daistudy.simpleshiro" />
       <option name="MAIN_CLASS_NAME" value="org.daistudy.simpleshiro.SimpleShiroTest" />
-      <option name="METHOD_NAME" value="testSubject" />
+      <option name="METHOD_NAME" value="testDefaultSimpleShiro" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,11 +450,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SimpleShiroTest.testCustomSimpleShiro" />
+        <item itemvalue="JUnit.SimpleShiroTest.testDefaultSimpleShiro" />
         <item itemvalue="JUnit.GuestControllerTest.login" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.SimpleShiroTest" />
-        <item itemvalue="JUnit.SimpleShiroTest.testSubject" />
-        <item itemvalue="JUnit.SimpleShiroTest.testCustomSimpleShiro" />
       </list>
     </recent_temporary>
   </component>
@@ -195,11 +477,27 @@
       <workItem from="1587007850811" duration="14547000" />
       <workItem from="1587083616680" duration="1654000" />
       <workItem from="1587090449490" duration="7000" />
+      <workItem from="1597227003119" duration="956000" />
+      <workItem from="1597310178861" duration="3043000" />
+      <workItem from="1608021439136" duration="2061000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

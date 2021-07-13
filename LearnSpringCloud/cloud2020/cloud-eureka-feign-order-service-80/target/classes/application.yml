@@ -1,0 +1,29 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-service
+
+  devtools:
+    restart:
+      poll-interval: 3s
+    livereload:
+      port: 30084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+  instance:
+    instance-id: order-eureka-80
+    prefer-ip-address: true
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    # feign 日志以什么级别监控指定接口
+    org.daistudy.springcloud.order.api.CloudPaymentService: debug

@@ -1,0 +1,59 @@
+
+<nz-card>
+  <div style="padding-bottom: 20px;">
+    <button nz-button nzType="primary" (click)="delete()" [disabled]="!indeterminate && !checked">删除</button>
+  </div>
+
+  <nz-table
+    #rowSelectionTable
+    nzShowPagination
+    nzShowSizeChanger
+    [nzData]="listOfData"
+    [nzShowTotal]="totalTemplate"
+    (nzCurrentPageDataChange)="onCurrentPageDataChange($event)"
+  >
+    <thead>
+    <tr>
+      <th [nzChecked]="checked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="onAllChecked($event)"></th>
+      <th>任务名称</th>
+      <th>任务组名</th>
+      <th>调用目标字符串</th>
+      <th>执行状态</th>
+      <th>开始时间</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+      <td
+        [nzChecked]="setOfCheckedId.has(data.jobLogId)"
+        [nzDisabled]="data.disabled"
+        (nzCheckedChange)="onItemChecked(data.jobLogId, $event)"
+      ></td>
+      <td>{{ data.jobName }}</td>
+      <td>{{ data.jobGroup }}</td>
+      <td>
+        <div style="width: 120px;" class="dotThree" [nz-tooltip]="data.invokeTarget">
+          {{ data.invokeTarget }}
+        </div>
+
+      </td>
+      <td>
+        {{data.status}}
+      </td>
+      <td>
+        {{data.startTime}}
+      </td>
+      <td>
+        <button nz-button nzType="primary" (click)="detail(data)">详情</button>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+</nz-card>
+
+<ng-template #totalTemplate let-total>
+  总记录数 {{ total }} 条
+</ng-template>
+
+

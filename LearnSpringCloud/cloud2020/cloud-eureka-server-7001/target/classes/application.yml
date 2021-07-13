@@ -1,0 +1,31 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: eureka-server-7001
+
+  devtools:
+    restart:
+      poll-interval: 3s
+    livereload:
+      port: 37001
+
+eureka:
+  instance:
+    hostname: eureka7001.com
+
+  server:
+    # 关闭自我保护机制，保证不可用服务及时剔除
+    enable-self-preservation: true
+    # 主动检测并剔除无效服务的间隔时间
+    eviction-interval-timer-in-ms: 5000
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      # 集群时，指向其他 eureka server
+#      defaultZone: http://eureka7002.com:7002/eureka
+      # 单机时，指向自己
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka

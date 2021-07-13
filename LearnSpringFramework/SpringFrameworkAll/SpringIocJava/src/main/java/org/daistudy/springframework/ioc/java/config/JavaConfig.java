@@ -5,6 +5,8 @@ import org.daistudy.springframework.ioc.java.bean.UserDao;
 import org.daistudy.springframework.ioc.java.condition.LinuxCondition;
 import org.daistudy.springframework.ioc.java.condition.WindowsCondition;
 import org.daistudy.springframework.ioc.java.model.*;
+import org.daistudy.springframework.ioc.java.test.bean.samename.model.ModelA;
+import org.daistudy.springframework.ioc.java.test.bean.samename.model.ModelB;
 import org.daistudy.springframework.ioc.java.utils.FactoryDemo;
 import org.daistudy.springframework.ioc.java.utils.OkHttpUtils;
 import org.daistudy.springframework.ioc.java.utils.OkhttpUtilsWithObject;
@@ -91,4 +93,14 @@ public class JavaConfig {
 //    UserDao userDao(){
 //        return new UserDao();
 //    }
+
+    @Bean("model")
+    ModelB modelB(){
+        return new ModelB();
+    }
+
+    @Bean("model")
+    ModelA modelA(){
+        return new ModelA();
+    }
 }

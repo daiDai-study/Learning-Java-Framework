@@ -1,0 +1,26 @@
+server:
+  port: 80
+spring:
+  application:
+    name: nacos-consumer
+
+  devtools:
+    restart:
+      poll-interval: 3s
+    livereload:
+      port: 30089
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+
+service-url:
+  nacos-provider: http://nacos-provider
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

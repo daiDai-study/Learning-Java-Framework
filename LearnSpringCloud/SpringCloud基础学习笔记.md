@@ -202,4 +202,4 @@
 
 #### 3.3 Hystrix 断路器原理
 
-![](./imgs/Hystrix断路器原理.png)
+![Hystrix断路器原理](./imgs/Hystrix断路器原理.png)

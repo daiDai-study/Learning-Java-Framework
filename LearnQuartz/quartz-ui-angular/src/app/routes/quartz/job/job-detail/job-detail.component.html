@@ -1,0 +1,14 @@
+<nz-descriptions nzTitle="任务详情" nzBordered [nzColumn]="2">
+  <nz-descriptions-item nzTitle="任务名称">{{record.jobName}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="任务组名">{{record.jobGroup}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="任务状态">{{record.status === '0' ? '正常' : '暂停'}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="执行表达式">{{record.cronExpression}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="调用目标字符串" [nzSpan]="2">{{record.invokeTarget}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="cron计划策略">{{record.misfirePolicy}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="是否允许并发执行">{{record.concurrent === '0' ? '是' : '否'}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="创建者">{{record.createBy}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="创建时间">{{record.createTime}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="更新者" *ngIf="record.updateBy">{{record.updateBy}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="更新时间" *ngIf="record.updateTime">{{record.updateTime}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="备注" *ngIf="record.remark">{{record.remark}}</nz-descriptions-item>
+</nz-descriptions>

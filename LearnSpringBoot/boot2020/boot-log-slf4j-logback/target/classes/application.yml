@@ -1,0 +1,9 @@
+logging:
+  level:
+    root: info
+    org.daistudy.log.slf4j.logback.controller2: debug
+#  file:
+#    path: ./log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(%5p) [%thread] %clr(%logger{40}){cyan} : %msg%n"
+#    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger : %msg%n"

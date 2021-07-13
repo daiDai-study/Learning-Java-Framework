@@ -1,0 +1,35 @@
+server:
+  port: 8401
+
+spring:
+  application:
+    name: cloud-sentinel-service
+
+  devtools:
+    restart:
+      poll-interval: 3s
+    livereload:
+      port: 38401
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.177.108.64:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: localhost:8080
+      datasource:
+        ds1:
+          nacos:
+            serverAddr: 10.177.108.64:8848
+            dataId: cloud-sentinel-service
+            ruleType: flow
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,15 @@
+<nz-descriptions nzTitle="任务详情" nzBordered [nzColumn]="2">
+  <nz-descriptions-item nzTitle="任务名称">{{record.jobName}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="任务组名">{{record.jobGroup}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="执行状态">{{record.status === '0' ? '正常' : '失败'}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="调用目标字符串">{{record.invokeTarget}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="日志信息" [nzSpan]="2">{{record.jobMessage}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="异常信息" *ngIf="record.status==='1'">{{record.exceptionInfo}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="开始时间">{{record.startTime}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="结束时间">{{record.endTime}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="创建者">{{record.createBy}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="创建时间">{{record.createTime}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="更新者" *ngIf="record.updateBy">{{record.updateBy}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="更新时间" *ngIf="record.updateTime">{{record.updateTime}}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="备注" *ngIf="record.remark">{{record.remark}}</nz-descriptions-item>
+</nz-descriptions>

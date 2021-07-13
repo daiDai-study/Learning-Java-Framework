@@ -1,0 +1,23 @@
+server:
+  port: 9101
+
+spring:
+  application:
+    name: nacos-provider
+
+  devtools:
+    livereload:
+      port: 39101
+    restart:
+      poll-interval: 3s
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

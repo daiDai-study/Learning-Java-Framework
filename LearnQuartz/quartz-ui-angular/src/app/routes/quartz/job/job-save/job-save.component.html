@@ -1,0 +1,72 @@
+<div class="modal-header">
+  <div class="modal-title">{{add ? '新建' : '编辑'}}任务</div>
+</div>
+
+<form nz-form [nzLayout]="'horizontal'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label nzRequired [nzSpan]="4">任务名称</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzErrorTip="请输入任务名称!">
+      <input nz-input formControlName="jobName" [(ngModel)]="data.jobName"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="4">任务组名</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzErrorTip="请选择组名!">
+      <nz-select formControlName="jobGroup" [(ngModel)]="data.jobGroup">
+        <nz-option nzValue="DEFAULT" nzLabel="默认"></nz-option>
+        <nz-option nzValue="SYSTEM" nzLabel="系统"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzRequired [nzSpan]="4">调用目标字符串</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzErrorTip="请输入调用目标字符串!" [nzExtra]="infoTemplate">
+      <input nz-input formControlName="invokeTarget" [(ngModel)]="data.invokeTarget"/>
+    </nz-form-control>
+    <ng-template #infoTemplate>
+      <span style="display: block;">Bean调用示例：ryTask.ryParams('ry')</span>
+      <span style="display: block;">Class类调用示例：com.ruoyi.quartz.task.RyTask.ryParams('ry')</span>
+      <span style="display: block;">参数说明：支持字符串，布尔类型，长整型，浮点型，整型</span>
+    </ng-template>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzRequired [nzSpan]="4">cron表达式</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzErrorTip="请输入cron表达式!">
+      <input nz-input formControlName="cronExpression" [(ngModel)]="data.cronExpression"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="4">执行策略</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <nz-radio-group formControlName="misfirePolicy" [(ngModel)]="data.misfirePolicy">
+        <label nz-radio-button [nzValue]="'0'">默认</label>
+        <label nz-radio-button [nzValue]="'1'">立即执行</label>
+        <label nz-radio-button [nzValue]="'2'">执行一次</label>
+        <label nz-radio-button [nzValue]="'3'">放弃执行</label>
+      </nz-radio-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="4">并发执行</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <nz-radio-group formControlName="concurrent" [(ngModel)]="data.concurrent">
+        <label nz-radio [nzValue]="'0'">允许</label>
+        <label nz-radio [nzValue]="'1'">禁止</label>
+      </nz-radio-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="4">任务状态</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <nz-radio-group formControlName="status" [(ngModel)]="data.status">
+        <label nz-radio [nzValue]="'0'">正常</label>
+        <label nz-radio [nzValue]="'1'">暂停</label>
+      </nz-radio-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzSpan]="14" [nzOffset]="4">
+      <button nz-button nzType="primary">保存</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

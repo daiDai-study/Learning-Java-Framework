@@ -1,0 +1,33 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-service
+
+  devtools:
+    restart:
+      poll-interval: 3s
+    livereload:
+      port: 30081
+
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1
+
+eureka:
+  client:
+    service-url:
+      # 集群时，指向多个 eureka server
+      #      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+      # 单机时，指向一个 eureka server
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: order-eureka-80
+    prefer-ip-address: true
+    # 主动发送心跳包的间隔时间
+    lease-renewal-interval-in-seconds: 2
+    # 服务过期时间，EurekaServer超过这个时间没有接收到心跳就会将这个实例剔除，一般是lease-renewal-interval-in-seconds的3倍
+    lease-expiration-duration-in-seconds: 6

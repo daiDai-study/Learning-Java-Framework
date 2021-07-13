@@ -1,0 +1,28 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: cloud-payment-service
+
+  devtools:
+    restart:
+      poll-interval: 3s
+    livereload:
+      port: 38004
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_cloud2020?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: org.daistudy.springcloud.common.entity
+

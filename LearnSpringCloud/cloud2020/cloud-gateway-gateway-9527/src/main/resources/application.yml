@@ -1,0 +1,33 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+
+  devtools:
+    livereload:
+      port: 39527
+    restart:
+      poll-interval: 3s
+
+  cloud:
+    gateway:
+      routes:
+        - id: payment-get
+          uri: lb://CLOUD-PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/get/**
+#            - After=2020-11-05T18:46:47.654+08:00[Asia/Shanghai]
+#            - Cookie=username, admin
+      discovery:
+        locator:
+          enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: cloud-gateway-9527

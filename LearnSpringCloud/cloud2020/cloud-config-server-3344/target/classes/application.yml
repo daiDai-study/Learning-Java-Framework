@@ -1,0 +1,46 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-server
+
+  devtools:
+    restart:
+      poll-interval: 3s
+    livereload:
+      port: 33344
+
+  cloud:
+    config:
+      # 默认选择的分支
+      label: master
+      server:
+        git:
+          # git 仓库地址
+          uri: https://gitee.com/zlyy/cloud2020-config.git
+          search-paths:
+            - cloud2020-config
+          username: 794709921@qq.com
+          password: daibao1992
+
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: config-server-3344
+    prefer-ip-address: true
+
+# 暴露刷新端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"

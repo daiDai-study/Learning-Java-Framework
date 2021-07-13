@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SimpleShiro" />
         <module name="SpringBootShiro" />
+        <module name="spring-boot-shiro" />
+        <module name="simple-shiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -21,6 +23,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringBootShiro" options="-parameters" />
       <module name="SpringBootShiroWithStarter" options="-parameters" />
+      <module name="spring-boot-shiro" options="-parameters" />
     </option>
   </component>
 </project>

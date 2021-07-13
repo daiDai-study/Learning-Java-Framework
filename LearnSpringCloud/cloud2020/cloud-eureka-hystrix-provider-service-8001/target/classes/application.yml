@@ -1,0 +1,24 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-hystrix-provider-service
+
+  devtools:
+    restart:
+      poll-interval: 3s
+    livereload:
+      port: 38001
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      # 集群时，指向多个 eureka server
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+      # 单机时，指向一个 eureka server
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: cloud-hystrix-provider-8001

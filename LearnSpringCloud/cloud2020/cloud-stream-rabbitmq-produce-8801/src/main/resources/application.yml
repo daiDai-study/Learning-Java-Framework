@@ -1,0 +1,37 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: stream-rabbitmq-produce
+
+  devtools:
+    livereload:
+      port: 38801
+    restart:
+      poll-interval: 3s
+  cloud:
+    stream:
+      binders:
+        defaultBinder: # 名称
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+      bindings:
+        output: # 名称
+          destination: studyExchange
+          content-type: application/json
+          binder: defaultBinder
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: stream-rabbitmq-produce-8801

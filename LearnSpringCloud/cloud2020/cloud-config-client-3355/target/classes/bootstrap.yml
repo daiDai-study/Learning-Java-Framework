@@ -1,0 +1,32 @@
+server:
+  port: 3355
+
+spring:
+  application:
+    name: cloud-config-client
+  devtools:
+    livereload:
+      port: 33355
+    restart:
+      poll-interval: 3s
+  cloud:
+    config:
+      label: master
+      name: config
+      profile: dev
+      uri: http://localhost:3344
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: config-client-3355
+#
+## 暴露监控端口
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"

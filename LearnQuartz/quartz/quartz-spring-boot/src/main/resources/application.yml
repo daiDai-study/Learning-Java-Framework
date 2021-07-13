@@ -1,0 +1,16 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /quartz
+
+mybatis:
+  # 配置mapper文件的扫描，找到所有的mapper.xml映射文件
+  mapper-locations: classpath:org/dai/study/quartz/springboot/**/*Mapper.xml
+  type-aliases-package: org.dai.study.quartz.springboot.entity
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_quartz?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver

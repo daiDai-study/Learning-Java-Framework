@@ -2,10 +2,7 @@ package org.daistudy.mybatis.onjava.demo;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.mapping.Environment;
-import org.apache.ibatis.session.Configuration;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.session.*;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.daistudy.mybatis.onjava.config.DataSourceFactory;
@@ -31,6 +28,14 @@ public class TestDemo {
             final StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
             final Student user = studentMapper.selectById(1);
             System.out.println("user = " + user);
+        }
+
+        try(SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH)){
+            StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+            for (int i = 1; i <= 4; i++) {
+                mapper.updateAge(i);
+            }
+            sqlSession.commit();
         }
     }
 }

@@ -1,0 +1,38 @@
+server:
+  port: 8803
+
+spring:
+  application:
+    name: stream-rabbitmq-consumer
+
+  devtools:
+    restart:
+      poll-interval: 3s
+    livereload:
+      port: 38803
+  cloud:
+    stream:
+      binders:
+        defaultBinder:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+      bindings:
+        input:
+          destination: studyExchange
+          context-type: application/json
+          binder: defaultBinder
+          group: rabbitmq01
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: stream-rabbitmq-consumer-8803

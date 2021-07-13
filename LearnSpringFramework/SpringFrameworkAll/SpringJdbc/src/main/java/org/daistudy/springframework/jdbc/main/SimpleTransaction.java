@@ -2,6 +2,7 @@ package org.daistudy.springframework.jdbc.main;
 
 import org.daistudy.springframework.jdbc.config.JdbcConfig;
 import org.daistudy.springframework.jdbc.dao.UserDao;
+import org.daistudy.springframework.jdbc.entity.User;
 import org.daistudy.springframework.jdbc.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,9 +17,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class SimpleTransaction {
     public static void main(String[] args) {
         final AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(JdbcConfig.class);
-        final UserDao userDao = applicationContext.getBean("userDao", UserDao.class);
-        final UserService userService = new UserService(userDao);
-        final int update = userService.update("里斯", "南京", 5);
-        System.out.println(update);
+        final UserService userService = applicationContext.getBean("userService", UserService.class);
+        User user = new User();
+        user.setName("张三456");
+        user.setAddress("江苏南京");
+        user.setFavorites("足球；篮球");
+        final int insert = userService.insert(user);
+        System.out.println(insert);
     }
 }

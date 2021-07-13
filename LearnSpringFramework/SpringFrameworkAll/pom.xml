@@ -13,6 +13,7 @@
         <module>SpringIocJava</module>
         <module>SpringAop</module>
         <module>SpringJdbc</module>
+        <module>SpringTransaction</module>
     </modules>
 
     <properties>

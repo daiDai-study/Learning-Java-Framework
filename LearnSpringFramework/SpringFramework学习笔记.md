@@ -515,7 +515,7 @@ public class ProfileDemo {
 }
 ```
 
-### IoC/DI Bean 的作用域（生命周期）
+### IoC/DI Bean 的作用域
 
 > Bean 的作用域类型主要有四种：
 > + singleton：单例形式，每次请求的都是同一个 Bean

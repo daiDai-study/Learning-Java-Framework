@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.daistudy.spring.boot.orm.mybatis.mapper.UserMapper">
+
+    <resultMap id="baseMap" type="org.daistudy.spring.boot.orm.mybatis.entity.User">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="favorites" property="favorites" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="list" resultMap="baseMap">
+        select * from user;
+    </select>
+
+    <select id="findById" parameterType="int" resultMap="baseMap">
+        select * from user id = #{id};
+    </select>
+
+    <insert id="insert" parameterType="org.daistudy.spring.boot.orm.mybatis.entity.User">
+        insert into user(name, address, favorites) values(#{name},#{address},#{favorites});
+    </insert>
+
+    <update id="update" parameterType="org.daistudy.spring.boot.orm.mybatis.entity.User">
+        update user set name=#{name}, address=#{address}, favorites=#{favorites} where id=#{id};
+    </update>
+
+    <delete id="delete" parameterType="org.daistudy.spring.boot.orm.mybatis.entity.User">
+        delete from user where id=#{id};
+    </delete>
+</mapper>
